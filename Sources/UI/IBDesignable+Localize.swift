@@ -15,7 +15,11 @@ import UIKit
         set {
             // set new value from dictionary
             DispatchQueue.main.async {
-                self.text = newValue?.localized()
+                if UserDefaults.standard.bool(forKey: "showOriginalKey") {
+                     self.text = newValue
+                } else {
+                  self.text = newValue?.localized()   
+                }
             }
         }
         get {
@@ -49,7 +53,11 @@ import UIKit
         set {
             // set new value from dictionary
             DispatchQueue.main.async {
-                self.text = newValue?.localized()
+                if UserDefaults.standard.bool(forKey: "showOriginalKey") {
+                     self.text = newValue
+                } else {
+                  self.text = newValue?.localized()   
+                }
             }
         }
         get {
@@ -65,7 +73,11 @@ import UIKit
         set {
             // set new value from dictionary
             DispatchQueue.main.async {
-                self.placeholder = newValue?.localized()
+                if UserDefaults.standard.bool(forKey: "showOriginalKey") {
+                    self.placeholder = newValue
+                } else {
+                    self.placeholder = newValue?.localized()    
+                }
             }
         }
         get {
@@ -82,7 +94,11 @@ import UIKit
         set {
             // set new value from dictionary
             DispatchQueue.main.async {
-                self.title = newValue?.localized()
+                if UserDefaults.standard.bool(forKey: "showOriginalKey") {
+                    self.title = newValue
+                } else {
+                     self.title = newValue?.localized()   
+                }
             }
         }
         get {

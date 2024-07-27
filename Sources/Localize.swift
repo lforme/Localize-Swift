@@ -59,7 +59,11 @@ public extension String {
      - Returns: The localized string.
      */
     func localized() -> String {
-        return localized(using: nil, in: .main)
+        if UserDefaults.standard.bool(forKey: "showOriginalKey") {
+           return self 
+        } else {
+           return localized(using: nil, in: .main)   
+        }
     }
 
     /**
